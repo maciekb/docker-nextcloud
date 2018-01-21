@@ -73,6 +73,8 @@ RUN \
  echo "**** configure php and nginx for nextcloud ****" && \
  echo "extension="smbclient.so"" > /etc/php7/conf.d/00_smbclient.ini && \
  sed -i \
+ 	-e 's/;opcache.enable=1/opcache.enable=1/g' \
+	-e 's/;opcache.enable_cli=0/opcache.enable_cli=1/g' \
 	-e 's/;opcache.interned_strings_buffer.*=.*/opcache.interned_strings_buffer=8/g' \
 	-e 's/;opcache.max_accelerated_files.*=.*/opcache.max_accelerated_files=10000/g' \
 	-e 's/;opcache.memory_consumption.*=.*/opcache.memory_consumption=128/g' \

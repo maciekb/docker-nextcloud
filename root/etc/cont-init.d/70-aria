@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# create files and directories
+touch /var/local/aria2c.sess
+mkdir /var/log/aria2
+
+# permissions
+chown abc:abc \
+	/var/local/aria2c.sess \
+	/var/log/aria2

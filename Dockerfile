@@ -62,8 +62,10 @@ RUN \
 	samba \
 	sudo \
 	tar \
-	unzip \
-	youtube-dl && \
+	unzip && \
+ echo "**** youtube-dl install ****" && \
+ curl -Lo /usr/local/bin/youtube-dl https://yt-dl.org/downloads/latest/youtube-dl && \
+ chmod a+rx /usr/local/bin/youtube-dl && \
  echo "**** compile smbclient ****" && \
  git clone git://github.com/eduardok/libsmbclient-php.git /tmp/smbclient && \
  cd /tmp/smbclient && \

@@ -1,22 +1,19 @@
 #!/usr/bin/with-contenv bash
 
 # create files and directories
-touch /var/local/aria2c.sess
-mkdir /var/log/aria2
+mkdir -p /config/aria2
 
 # permissions
-chown abc:abc \
-	/var/local/aria2c.sess \
-	/var/log/aria2
+chown abc:abc /config/aria2
 
 # start aria2
 s6-setuidgid abc /usr/bin/aria2c -c -D \
 	--enable-rpc \
 	--rpc-allow-origin-all \
-	--log=/var/log/aria2/aria2.log \
+	--log=/config/aria2/aria2.log \
 	--check-certificate=false \
-	--save-session=/var/local/aria2c.sess \
-	--input-file=/var/local/aria2c.sess \
+	--save-session=/config/aria2/aria2c.sess \
+	--input-file=/config/aria2/aria2c.sess \
 	--save-session-interval=2 \
 	--continue=true \
 	--rpc-save-upload-metadata=true \

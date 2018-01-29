@@ -2,12 +2,14 @@
 
 # create files and directories
 mkdir -p /config/aria2
+touch /config/aria2/aria2c.sess
 
 # permissions
-chown abc:abc /config/aria2
+chown -R abc:abc /config/aria2
 
 # start aria2
 s6-setuidgid abc /usr/bin/aria2c -c -D \
+	--disable-ipv6=true
 	--enable-rpc \
 	--rpc-allow-origin-all \
 	--log=/config/aria2/aria2.log \

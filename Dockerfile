@@ -7,7 +7,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="sparklyballs"
 
 # package version
-ENV NEXTCLOUD_VER="12.0.4"
+ENV NEXTCLOUD_VER="13.0.0RC3"
 
 # environment settings
 ENV NEXTCLOUD_PATH="/config/www/nextcloud"
@@ -27,7 +27,7 @@ RUN \
 	zlib-dev && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
- 	aria2
+ 	aria2 \
 	curl \
 	ffmpeg \
 	libxml2 \

@@ -2,7 +2,9 @@
 
 # create files and directories
 mkdir -p /config/aria2
-touch /config/aria2/aria2c.sess
+touch \
+	/config/aria2/aria2c.sess \
+	/config/aria2/dht.dat
 
 # permissions
 chown -R abc:abc /config/aria2
@@ -16,6 +18,7 @@ s6-setuidgid abc /usr/bin/aria2c -c -D \
 	--check-certificate=false \
 	--save-session=/config/aria2/aria2c.sess \
 	--input-file=/config/aria2/aria2c.sess \
+	--dht-file-path=/config/aria2/dht.dat \
 	--save-session-interval=2 \
 	--continue=true \
 	--rpc-save-upload-metadata=true \

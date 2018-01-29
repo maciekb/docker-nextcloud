@@ -31,6 +31,7 @@ RUN \
 	curl \
 	ffmpeg \
 	libxml2 \
+	mc \
 	php7-apcu \
 	php7-bz2 \
 	php7-ctype \
@@ -59,6 +60,7 @@ RUN \
 	php7-xml \
 	php7-xmlreader \
 	php7-zip \
+	py-setuptools \
 	samba \
 	sudo \
 	tar \

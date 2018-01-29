@@ -27,6 +27,7 @@ RUN \
 	zlib-dev && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
+ 	aria2
 	curl \
 	ffmpeg \
 	libxml2 \
@@ -61,7 +62,8 @@ RUN \
 	samba \
 	sudo \
 	tar \
-	unzip && \
+	unzip \
+	youtube-dl && \
  echo "**** compile smbclient ****" && \
  git clone git://github.com/eduardok/libsmbclient-php.git /tmp/smbclient && \
  cd /tmp/smbclient && \
